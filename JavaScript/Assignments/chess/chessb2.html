@@ -1,0 +1,47 @@
+<html>
+<head>
+<script language="JavaScript">
+
+
+function fnInit()
+{
+  var row, cell;
+  var i, j;
+
+  for (i=0; i<8; i++)
+  {
+     row = body.insertRow(-1);
+     for (j=0; j<8; j++)
+     {
+        cell = row.insertCell(-1);
+        
+    
+        //oCell.innerHTML ="hello";
+        row.cells[j].style.color = "red";
+
+       //oRow.cells[j].setAttribute("bgColor","blue");
+	row.cells[j].setAttribute("width","30px");
+        row.cells[j].setAttribute("height","30px");
+        if(((i+j)%2==0))
+        {
+          row.cells[j].setAttribute("bgColor","grey");
+        }
+        else
+        {       
+          row.cells[j].setAttribute("bgColor","black");
+        }
+     }
+
+  }
+}
+</script>
+</head>
+<body onload="fnInit();">
+
+<table ID="table" border="1" >
+
+<tbody ID="body"></tbody>
+</TABLE>
+
+</body>
+</html>

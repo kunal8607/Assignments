@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript">
+function writeText(txt)
+{
+document.getElementById("desc").innerHTML=txt;
+}
+</script>
+</head>
+
+<body>
+<img id="myrobo" src ="Images/leg.jpeg" width ="300" height ="500" alt="robot" />
+
+<map name="planetmap">
+<area shape ="rect" coords ="0,0,300,150"
+onmouseover="writeText('mouse on head')" />
+
+<area shape ="rect" coords ="0,200,300,350"
+onmouseover="writeText('mouse on hand)" />
+
+<area shape ="rect" coords ="0,400,300,500"
+onmouseover="writeText('mouse on leg')" />
+</map> 
+
+<p id="desc">drag mouse</p>
+
+</body>
+</html>
+
+
+
+

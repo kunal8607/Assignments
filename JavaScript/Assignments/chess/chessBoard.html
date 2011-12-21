@@ -1,0 +1,58 @@
+    <html >  
+    <head>  
+      
+    <title>Create div element dynamically using javascript</title>  
+      
+    <style type="text/css">  
+      
+    .myDivClass  
+    {  
+    color:black;
+	
+    padding:0px;  
+      
+    width: 25px;  
+      
+    height: 25px;  
+      
+    border:0px;
+    background-color:#FFD700;
+
+   
+    float:left;
+      
+    }  
+      
+    </style>  
+      
+    <script type="text/javascript" language="javascript">  
+      
+    function CreateDivElement() {  
+      
+    var divElement = document.createElement("div");  
+      
+    divElement.id = "myDiv"; 
+	divElement.className = "myDivClass";   
+      
+    
+      
+   
+    document.body.appendChild(divElement);  
+      
+    }  
+      
+    </script>  
+      
+    </head>  
+      
+    <body>  
+      
+    <div>  
+      
+    <input id="myBtn" type="button" value="Click Me" onclick="CreateDivElement();" />  
+      
+    </div>  
+      
+    </body>  
+      
+    </html>  

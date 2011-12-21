@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<style type="text/css"> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+animation:myfirst 5s;
+-moz-animation:myfirst 5s; /* Firefox */
+
+
+@keyframes myfirst
+{
+0%   {-ms-transform:rotate(-30deg); }
+25%  {-ms-transform:rotate(-30deg); }
+50%  {-ms-transform:rotate(-30deg); }
+100% {-ms-transform:rotate(-30deg); }
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {-ms-transform:rotate(-30deg); }
+25%  {-ms-transform:rotate(-30deg); }
+50%  {-ms-transform:rotate(-30deg); }
+100% {-ms-transform:rotate(-30deg); }
+}
+
+
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer and Opera.</p>
+<p><b>Note:</b> When an animation is finished, it changes back to its original style.</p>
+
+<div></div>
+
+</body>
+</html>
+
+
+

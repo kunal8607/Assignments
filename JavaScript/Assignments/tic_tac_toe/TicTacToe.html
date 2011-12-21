@@ -1,0 +1,255 @@
+<html>
+<head>
+<SCRIPT name = "JavaScript">
+
+    turn = 1;
+    change = 1;    
+    innitial1 = -1;
+    innitial2 = -1;
+    innitial3 = -1;
+    innitial4 = -1;
+    innitial5 = -1;
+    innitial6 = -1;
+    innitial7 = -1;
+    innitial8 = -1;
+    innitial9 = -1;
+   
+    whogoesnow = "chance:player 1"
+
+
+function win(){
+  if   (innitial1==innitial2 && innitial2==innitial3 && innitial3==0 ||
+innitial4==innitial5 && innitial5==innitial6 && innitial6==0 ||    
+        innitial7==innitial8 && innitial8==innitial9 && innitial9==0 ||
+        innitial1==innitial4 && innitial4==innitial7 && innitial7==0 ||
+        innitial2==innitial5 && innitial5==innitial8 && innitial8==0 ||
+        innitial3==innitial6 && innitial6==innitial9 && innitial9==0 ||
+        innitial1==innitial5 && innitial5==innitial9 && innitial9==0 ||
+        innitial3==innitial5 && innitial5==innitial7 && innitial7==0 ){
+        alert ("player 2: wins !!!");          
+        history.go(0)  
+  }
+  if   (innitial1==innitial2 && innitial2==innitial3 && innitial3==1 ||
+innitial4==innitial5 && innitial5==innitial6 && innitial6==1 ||    
+        innitial7==innitial8 && innitial8==innitial9 && innitial9==1 ||
+        innitial1==innitial4 && innitial4==innitial7 && innitial7==1 ||
+        innitial2==innitial5 && innitial5==innitial8 && innitial8==1 ||
+        innitial3==innitial6 && innitial6==innitial9 && innitial9==1 ||
+        innitial1==innitial5 && innitial5==innitial9 && innitial9==1 ||
+        innitial3==innitial5 && innitial5==innitial7 && innitial7==1 ){
+        alert ("player 1: wins !!!");
+	history.go(0)
+  }
+}
+
+function turnchange(turn){
+  if (change == 1)  {
+    if (turn == 0){
+        turn = 1;
+        whogoesnow = "chance : player " + 1
+    }
+    else {
+        turn = 0;
+	whogoesnow = "chance : player " + 2
+    }
+    
+  }
+  else {
+    turn = turn;
+  }
+  change = 1  
+  return (turn); 
+}
+
+function changing(clicked){
+if (clicked == 1){            
+   store = innitial1 ;}
+if (clicked == 2){
+   store = innitial2 ;}
+if (clicked == 3){
+   store = innitial3 ;}
+if (clicked == 4){
+   store = innitial4 ;}
+if (clicked == 5){
+   store = innitial5 ;}
+if (clicked == 6){
+   store = innitial6 ;}
+if (clicked == 7){
+   store = innitial7 ;}
+if (clicked == 8){
+   store = innitial8 ;}
+if (clicked == 9){
+   store = innitial9 ;}
+
+if (store == -1){
+   if (turn == 0){
+      xo = "  O  " ;	       	          
+      store = 0             
+   }
+   else {
+      xo = "  X  "  ;              
+      store = 1	     
+   }                              
+   if (clicked == 1){            
+      innitial1 = store;}
+   if (clicked == 2){
+      innitial2 = store ;}
+   if (clicked == 3){
+      innitial3 = store ;}
+   if (clicked == 4){
+      innitial4 = store ;}
+   if (clicked == 5){
+      innitial5 = store ;}
+   if (clicked == 6){
+      innitial6 = store ;}
+   if (clicked == 7){
+      innitial7 = store ;}
+   if (clicked == 8){
+      innitial8 = store ;}
+   if (clicked == 9){
+      innitial9 = store ;}
+} 
+else {
+   if (store == 0){
+       xo = "  O  ";}
+   if (store == 1){
+       xo = "  X  ";}
+   change = 0
+}
+return (xo) ;
+}
+
+function change_block1(form){
+    //win();
+		//var turn2
+    clicked = 1;    
+    changing(clicked) ;     
+    turn = turnchange(turn) ;  
+    form.block1.value = xo; 
+    form.whoseturn.value = whogoesnow        
+    win(); 
+   return;
+}
+function change_block2(form){	
+    clicked = 2;
+    changing(clicked) ;   
+    form.block2.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow      
+    win();
+    return;
+}
+
+function change_block3(form){	
+    clicked = 3;
+    changing(clicked) ;
+    form.block3.value = xo;         
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow 
+    win();
+    return;   
+}
+
+function change_block4(form){	
+    clicked = 4;
+    changing(clicked) ;
+    form.block4.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow     
+    win();
+    return;
+}
+
+function change_block5(form){	
+    clicked = 5;
+    changing(clicked) ;
+    form.block5.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow     
+    win();     
+    return;
+}
+
+function change_block6(form){	
+    clicked = 6;
+    changing(clicked) ;
+    form.block6.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow     
+    win();
+    return;
+}
+
+function change_block7(form){	
+    clicked = 7;
+    changing(clicked) ;
+    form.block7.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow    
+    win();
+    return;
+}
+
+function change_block8(form){	
+    clicked = 8;
+    changing(clicked) ;    
+    form.block8.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow 
+    win();    
+    return;
+}
+
+function change_block9(form){	
+    clicked = 9;
+    changing(clicked) ;
+    form.block9.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whogoesnow  
+    win();
+    return;
+}
+</SCRIPT>
+
+
+</head>
+<body>
+
+<div id="main">
+  <center><form>
+  
+  <input type = "button" name = "whoseturn" 
+ value = "chance: player  1">	 
+<br><br><br><br>
+<table>
+<tr>
+<td>
+<input type = "button" name = "block1" value = "      "		 onClick =change_block1(this.form)>  
+<td>
+<input type = "button" name = "block2" value = "      "		 onClick =change_block2(this.form)> 
+<td>
+<input type = "button" name = "block3" value = "      "		 onClick =change_block3(this.form)> 
+<tr>
+<td>
+<input type = "button" name = "block4" value = "      "		 onClick =change_block4(this.form)> 
+<td>
+<input type = "button" name = "block5" value = "      "		 onClick =change_block5(this.form)> 
+<td>
+<input type = "button" name = "block6" value = "      "		 onClick =change_block6(this.form)> 
+<tr>
+<td>
+<input type = "button" name = "block7" value = "      "		 onClick =change_block7(this.form)> 
+<td>
+<input type = "button" name = "block8" value = "      "		 onClick =change_block8(this.form)>   
+<td>
+<input type = "button" name = "block9" value = "      "      onClick =change_block9(this.form)> 
+</table>
+<br><br>
+
+<input type="button" value="refresh" onClick="history.go(0)">
+</center>
+  
+  </form>
+  </center>
+  </div>
+</body>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>my title</title>
+<script type="text/javascript" src="js/jq.js"> </script>
+
+<script type="text/javascript" >
+$(document).ready(function(){
+
+
+$('#selectme').change(function(){
+var text1=$('#selectme').val();
+alert(text1);
+$('#txt').val(text1);
+});
+  
+
+});
+ </script>
+</head>
+<body>
+<select id="selectme" > 
+<option>java</option>
+<option>jquery </option>
+<option>javascript </option>
+<option>ror </option>
+</select>
+<br>
+<input id="txt" type="text"/>
+</body>
+</html>

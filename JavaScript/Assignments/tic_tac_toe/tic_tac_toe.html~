@@ -1,0 +1,270 @@
+<html>
+  <head>
+    <title>MY TicTacToe</title>
+    <link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+	<script type="text/javascript" src="js/jq.js"></script>
+	</script>
+	<script type="text/javascript">
+	turn = 1; // 1 for p1 0 for p2
+	change=1; // 1-valid  0-non valid
+	innitial1=-1;
+	innitial2=-1;
+	innitial3=-1;
+	innitial4=-1;
+	innitial5=-1;
+	innitial6=-1;
+	innitial7=-1;
+	innitial8=-1;
+	innitial9=-1;
+	whose_turn_next="player 1";
+	
+	function win(){
+  if   (innitial1==innitial2 && innitial2==innitial3 && innitial3==0 ||
+innitial4==innitial5 && innitial5==innitial6 && innitial6==0 ||    
+        innitial7==innitial8 && innitial8==innitial9 && innitial9==0 ||
+        innitial1==innitial4 && innitial4==innitial7 && innitial7==0 ||
+        innitial2==innitial5 && innitial5==innitial8 && innitial8==0 ||
+        innitial3==innitial6 && innitial6==innitial9 && innitial9==0 ||
+        innitial1==innitial5 && innitial5==innitial9 && innitial9==0 ||
+        innitial3==innitial5 && innitial5==innitial7 && innitial7==0 ){
+        alert ("player 1: wins !!!");          
+        history.go(0)  
+  }
+  if   (innitial1==innitial2 && innitial2==innitial3 && innitial3==1 ||
+innitial4==innitial5 && innitial5==innitial6 && innitial6==1 ||    
+        innitial7==innitial8 && innitial8==innitial9 && innitial9==1 ||
+        innitial1==innitial4 && innitial4==innitial7 && innitial7==1 ||
+        innitial2==innitial5 && innitial5==innitial8 && innitial8==1 ||
+        innitial3==innitial6 && innitial6==innitial9 && innitial9==1 ||
+        innitial1==innitial5 && innitial5==innitial9 && innitial9==1 ||
+        innitial3==innitial5 && innitial5==innitial7 && innitial7==1 ){
+        alert ("player 2: wins !!!");
+	history.go(0)
+  }
+}
+
+
+
+
+
+
+
+
+
+	
+ function turnchange(t){
+  if (change == 1)  {
+    if (t == 0){
+        t = 1;
+        whose_turn_next = "chance : player " + 1
+    }
+    else {
+        t = 0;
+	whose_turn_next = "chance : player " + 2
+    }
+    
+  }
+  else {
+    t = t;
+  }
+  change = 1  
+  return (t); 
+}
+    
+	
+	function changing(clicked)
+	{
+      if (clicked == 1){            
+       store = innitial1 ;}
+      if (clicked == 2){
+         store = innitial2 ;}
+      if (clicked == 3){
+          store = innitial3 ;}
+      if (clicked == 4){
+          store = innitial4 ;}
+      if (clicked == 5){
+         store = innitial5 ;}
+      if (clicked == 6){
+         store = innitial6 ;}
+	  if (clicked == 7){
+      store = innitial7 ;}
+	  if (clicked == 8){
+        store = innitial8 ;}
+      if (clicked == 9){
+         store = innitial9 ;}
+
+   if (store == -1){
+          if (t == 0){
+             xo = "  O  " ;	       	          
+             store = 0             
+           }
+         else {
+           xo = "  X  "  ;              
+           store = 1	     
+        }                              
+	  if (clicked == 1){            
+       innitial1 = store;}
+	  if (clicked == 2){
+       innitial2 = store ;}
+	  if (clicked == 3){
+       innitial3 = store ;}
+	  if (clicked == 4){
+       innitial4 = store ;}
+	  if (clicked == 5){
+       innitial5 = store ;}
+	  if (clicked == 6){
+       innitial6 = store ;}
+	  if (clicked == 7){
+       innitial7 = store ;}
+      if (clicked == 8){
+       innitial8 = store ;}
+      if (clicked == 9){
+       innitial9 = store ;}
+} 
+  else {
+   if (store == 0){
+       xo = "  O  ";}
+   if (store == 1){
+       xo = "  X  ";}
+   change = 0
+    }
+return (xo) ;
+}
+
+
+
+
+function change_b1(form){
+win(); 	
+    clicked = 1;    
+    changing(clicked) ;     
+    turn = turnchange(turn) ;  
+    form.b1.value = xo; 
+    form.whoseturn.value = whose_turn_next        
+    win(); 
+   return;
+}
+function change_b2(form){	
+    clicked = 2;
+    changing(clicked) ;   
+    form.b2.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next      
+    win();
+    return;
+}
+
+function change_b3(form){	
+    clicked = 3;
+    changing(clicked) ;
+    form.b3.value = xo;         
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next 
+    win();
+    return;   
+}
+
+function change_b4(form){	
+    clicked = 4;
+    changing(clicked) ;
+    form.b4.value = xo;    
+    turn = turnchange(turn) ;     
+    form.whoseturn.value = whose_turn_next     
+    win();
+    return;
+}
+
+function change_b5(form){	
+    clicked = 5;
+    changing(clicked) ;
+    form.b5.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next     
+    win();     
+    return;
+}
+
+function change_b6(form){	
+    clicked = 6;
+    changing(clicked) ;
+    form.b6.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next     
+    win();
+    return;
+}
+
+function change_b7(form){	
+    clicked = 7;
+    changing(clicked) ;
+    form.b7.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next    
+    win();
+    return;
+}
+
+function change_b8(form){	
+    clicked = 8;
+    changing(clicked) ;    
+    form.b8.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next 
+    win();    
+    return;
+}
+
+function change_b9(form){	
+    clicked = 9;
+    changing(clicked) ;
+    form.b9.value = xo;    
+    turn = turnchange(turn) ;  
+    form.whoseturn.value = whose_turn_next  
+    win();
+    return;
+	
+	
+	
+	</script>
+  </head>
+  <body>
+  <div id="main">
+  <center><form>
+  
+  <input type = "button" name = "whoseturn" 
+ value = "chance: player  1">	 
+<br><br><br><br>
+<table>
+<tr>
+<td>
+<input type = "button" name = "b1" value = "      "		 onClick =change_b1(this.form)>  
+<td>
+<input type = "button" name = "b2" value = "      "		 onClick =change_b2(this.form)> 
+<td>
+<input type = "button" name = "b3" value = "      "		 onClick =change_b3(this.form)> 
+<tr>
+<td>
+<input type = "button" name = "b4" value = "      "		 onClick =change_b4(this.form)> 
+<td>
+<input type = "button" name = "b5" value = "      "		 onClick =change_b5(this.form)> 
+<td>
+<input type = "button" name = "b6" value = "      "		 onClick =change_b6(this.form)> 
+<tr>
+<td>
+<input type = "button" name = "b7" value = "      "		 onClick =change_b7(this.form)> 
+<td>
+<input type = "button" name = "b8" value = "      "		 onClick =change_b8(this.form)>   
+<td>
+<input type = "button" name = "b9" value = "      "      onClick =change_b9(this.form)> 
+</table>
+<br><br>
+
+<input type="button" value="refresh" onClick="history.go(0)">
+</center>
+  
+  </form>
+  </center>
+  </div>
+  </body>
+  
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript">
+function dance(txt)
+{
+document.getElementById("myrobo").src="Images/"+txt+".jpeg";
+}
+</script>
+</head>
+
+<body>
+<img id="myrobo" src ="Images/leg.jpeg" width ="300" height ="500" alt="robot" border="1" />
+
+<map name="robotmap">
+<area shape ="rect" coords ="0,0,300,150"
+onmouseover="dance('head')" />
+
+<area shape ="rect" coords ="0,200,300,350"
+onmouseover="dance('hand')"/>
+
+<area shape ="rect" coords ="0,400,300,500"
+onmouseover="dance('leg')" />
+</map> 
+
+
+</body>
+</html>
+
+
+
+

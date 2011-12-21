@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript" src="js/jq.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  
+$('#myimg').mouseover(function(){
+$('#mydiv').text("mouse over image");}
+);
+
+$('#myimg').mouseout(function(){
+$('#mydiv').text("mouse out of range");}
+);
+
+$('#myimg').click(function(){
+$('#myimg').hide('slow');}
+);
+
+});
+</script>
+</head>
+<body>
+
+<div id=>
+<img id="myimg"src="images/fish.gif"/>
+<p id="mydiv"> move your mouse over image</p>
+</div>
+
+</body>
+</html>
+
+

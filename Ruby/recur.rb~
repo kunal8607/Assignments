@@ -1,0 +1,14 @@
+str="hi this is my demo string"
+k=str.split()
+i=0
+def recursion(i,k)
+if(!(k[i]==nil))
+	puts(k[i])
+        i=i+1
+	recursion(i,k)
+
+ end
+end
+
+recursion(0,k)
+

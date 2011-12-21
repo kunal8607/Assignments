@@ -1,0 +1,57 @@
+<html>
+<head>
+<script type="text/javascript">
+function validation()
+{
+ 	var n=document.getElementById("name").value;
+	var ens=document.getElementById("email").value;
+	var ag=document.getElementById("age").value;
+	if(n=="")
+	{
+		alert("name can't be empty");
+		return false;	
+	}
+        if(ens=="")
+	{
+		alert("email can't be empty");	
+		return false;	
+	}
+	if(ag=="")
+	{
+		alert("age can't be empty");	
+		return false;	
+	}
+
+    var atpos=ens.indexOf("@");
+  var dotpos=ens.lastIndexOf(".");
+  if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+  {
+  alert("Not a valid e-mail address");
+return false;	
+  }
+ 
+	
+	
+}
+
+
+function namev()
+{	console.log("hi");
+ 
+	var ny=document.getElementById("name").value;
+        alert(ny);
+}
+
+
+</script>
+</head>
+<body>
+<form method="post" onsubmit='return validation();'>
+
+name: <input type="input" id="name" name="Name" onkeyup="namev();" /><br>
+age:  <input type="input" id="age" name="Age"/><br>
+email.id <input type="input" id="email" name="Email"/><br>
+<input type="submit" value="validate"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="CSS/mycss.css"/>
+
+
+<script type="text/javascript">
+function mkhead()
+{
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.fillStyle="#FF0000";
+ctx.beginPath();
+ctx.arc(150,100,50,0,Math.PI*2,true);
+ctx.closePath();
+ctx.fill();
+}
+
+function dancelh()
+{
+	 var div=document.getElementById("lefthand");
+	div.className = "lhd";
+}
+
+function stoplh()
+{
+	 var div=document.getElementById("lefthand");
+	div.className = "lh";
+}
+
+function dancerh()
+{
+	 var div=document.getElementById("righthand");
+	div.className = "rhd";
+}
+
+function stoprh()
+{
+	 var div=document.getElementById("righthand");
+	div.className = "rh";
+}
+
+function dancell()
+{
+	 var div=document.getElementById("leftleg");
+	div.className = "lld";
+}
+
+function stopll()
+{
+	 var div=document.getElementById("leftleg");
+	div.className = "ll";
+}
+
+
+function dancerl()
+{
+	 var div=document.getElementById("rightleg");
+	div.className = "rld";
+}
+
+function stoprl()
+{
+	 var div=document.getElementById("rightleg");
+	div.className = "rl";
+}
+
+function dancehead()
+{
+	 var div=document.getElementById("head");
+	div.className = "dh";
+}
+
+function stophead()
+{
+	 var div=document.getElementById("head");
+	div.className = "h";
+}
+
+
+</script>
+
+</head>
+<body onload="mkhead();">
+<div id="outer">
+<div id="head" class="h"  onmouseover="dancehead();" onmouseout="stophead();">
+
+<canvas id="myCanvas" >
+Your browser does not support the canvas element.
+</canvas>
+
+</div>
+<div id=stomach >
+</div>
+
+<div id=lefthand class="lh" onmouseover="dancelh();" onmouseout="stoplh();"> </div>
+<div id=righthand class="rh" onmouseover="dancerh();" onmouseout="stoprh();"> </div>
+<div id=leftleg class="ll"  onmouseover="dancell();" onmouseout="stopll();">  </div>
+<div id=rightleg class="rl" onmouseover="dancerl();" onmouseout="stoprl();"></div>
+
+
+</body>
+</html>

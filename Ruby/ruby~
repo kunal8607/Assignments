@@ -1,0 +1,164 @@
+String 1 :
+RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.
+
+
+now i have to check the occurance of RUBY in string 1 
+
+for this use scan method first this will gives the array likes this
+
+
+irb(main):053:0> str2=String.new("RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.")
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):054:0> k=str2.scan("RUBY")
+=> ["RUBY", "RUBY", "RUBY"]
+irb(main):055:0> k.length
+=> 3
+irb(main):056:0> 
+
+
+
+now how to capitalize string 1:
+	
+	i have use the capltalize method on string object 
+	
+	like 
+	
+	str= "capliatize me "
+	puts"str.capltalisze";
+	
+	
+	irb(main):056:0> puts str2.capitalize
+Ruby parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as ruby code. the parser then executes all of the code it finds until it runs into a ruby closing <br/> tag.
+=> nil
+
+
+
+
+String 2 :
+RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used.
+
+
+now to combine string 1 and string 2
+
+for this use the + operator in ruby the operators are also considered as method
+
+
+
+admin20@ubuntu:~$ irb
+irb(main):001:0> str2="RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+=> "RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+irb(main):002:0> str1="RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag."
+irb(main):003:0> str1+str2
+=> "RUBY parses a file by looking for <br/> one of the special tags that tells it to start interpreting the text as RUBY code. The parser then executes all of the code it finds until it runs into a RUBY closing <br/> tag.RUBY does not require (or support) explicit type definition in variable declaration; a variable's type is determined by the context in which the variable is used."
+irb(main):004:0> 
+
+
+print date:
+	
+	The Date and DateClass classes reside in the Ruby date library. Before these classes and their respective methods can be used,
+	the date library must be included using the require directive:
+		require 'date'
+		
+		require 'date'
+
+date = Date.new(2011, 12, 16) // yyyy,mm,dd
+
+Having created the date object we can access the properties of the object:
+date.day
+=> 16
+
+date.month
+=> 12
+
+date.year
+=> 2011
+
+now to print date as   12th Jan 2012
+
+
+for this we need the strftime method:
+	strftime() turns a Date or DateTime into nicely formatted output. The following table shows the code you can use to create a nicely formatted date
+	
+	following are some formators
+	
+	
+	Letter	Output	Example
+%A	full day of week	Monday
+%a	abbrev day of week	Mon
+%B	full month name	September
+%b	abbrev month name	Sep
+%C	century (first two digits of year)	20
+%c	Day, month, time. year	Mon Sep 5 15:45:50 2009
+%D	western format with slashes	09/21/09
+%d	day of month (zero-padded)	05
+%e	day of month (space-padded)	 5
+%F	Year-month-day (with dash)	2009-09-05
+%G	4-digit year	2009
+%g	2-digit year	09
+%H	Hour (24 hour format)	15
+%h	abbrev month	Sep
+%I	hour (12 hour format)	03
+%j	day of year (number of days since Jan 1)	248
+%k	hour (24 hour format)	15
+%l	hour (12 hour format space padded)	 3
+%M	minute	45
+%m	month (zero padded)	09
+%n	newline	
+%P	am or pm (lowercase)	pm
+%p	AM or PM (uppercase)	PM
+%Q	milli-seconds since unix epoch (Jan 1 1970)	
+%R	hour:minute	15:45
+%r	hour:minute:second AM/PM	03:45:50 PM
+%S	seconds	50
+%s	seconds since unix epoch (Jan 1 1970)	1252165550
+%u	weekday as a decimal number	6
+%U	week number of the current year as a decimal number, starting with the first Sunday as the first day of the first week	35
+%V	The ISO 8601:1988 week number of the current year as a decimal number, range 01 to 53, where week 1 is the first week that has at
+  least 4 days in the current year, and with Monday as the first day
+  of the week.	36
+%W	week number of the current year as a decimal number, starting with the first Monday as the first day of the first week	35
+%w	day of the week as a decimal, Sunday being 0	6
+%x	preferred date representation for the current locale without the time	09/05/09
+%X	preferred time representation for the current locale without the date	15:45:50
+%y	year as a decimal number without a century (range 00 to 99)	09
+%Y	year as a decimal number including the century	2009
+%Z	time zone or name or abbreviation	+00:00
+%z	timezone offset	+0000
+%%	literal `%' character	%
+%L	millisecond	
+
+
+	
+	to print date as   12th Jan 2012:
+		
+		
+		
+		
+		irb(main):002:0> require 'date'
+=> true
+irb(main):003:0> date=Date.new(2012,1,12)
+=> #<Date: 4911885/2,0,2299121>
+irb(main):004:0> date.strftime(%d)
+SyntaxError: compile error
+(irb):4: unknown type of %string
+(irb):4: syntax error, unexpected $end, expecting ')'
+	from (irb):4
+	from :0
+irb(main):005:0> date.strftime("%d")
+=> "16"
+irb(main):006:0> date.strftime("%m")
+=> "01"
+irb(main):007:0> date.strftime("%b")
+=> "Jan"
+irb(main):008:0> date
+=> #<Date: 4911885/2,0,2299121>
+irb(main):009:0> date.strftime("date is %eth %b %G")
+=> "date is 12th Jan 2012"
+irb(main):010:0> 
+
+	
+	
+	
+
+

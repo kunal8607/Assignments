@@ -1,0 +1,19 @@
+#main{
+width:900px;
+
+background:black;	
+	margin-left:auto;
+margin-right:auto
+
+	
+	
+}
+	
+	
+.simple{
+width:31px;
+height:31px;
+background:grey;
+border: 1px solid black;
+float:left;
+}
